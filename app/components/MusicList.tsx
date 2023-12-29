@@ -15,22 +15,6 @@ export default function MusicList() {
 
         const accessToken = session?.accessToken;
 
-        //getting the user id: https://developer.spotify.com/documentation/web-api/reference/get-current-users-profile
-
-        //create a playlist: https://developer.spotify.com/documentation/web-api/reference/create-playlist
-
-        //search for song id by name and artist and reduce the limit to 1: https://api.spotify.com/v1/search?q=Lose%20Yourself%20artist:Eminem&type=track&limit=1
-
-        //add songs to playlist: https://developer.spotify.com/documentation/web-api/reference/add-tracks-to-playlist
-
-
-        // ----
-        //user id  "jq2cyp1ate6mdkkr82qhquccb"
-
-        //playlist id "04caoZ1bZIRlFaOOrtTWsf"
-
-        // song uri ["spotify:track:7MJQ9Nfxzh8LPZ9e9u68Fq"]
-
         const playlist = {
             name: "Workout Playlist BeatBuilder",
             description: "Created by BeatBuilder",
