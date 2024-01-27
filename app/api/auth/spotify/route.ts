@@ -5,5 +5,6 @@ import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 
 export async function GET() {
     const session = await getServerSession(authOptions)
+    console.log("session from route.ts:", session)
     return NextResponse.json({name: session?.user?.name ?? "Not Logged In"})
 }
