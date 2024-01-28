@@ -1,7 +1,8 @@
-import getUserId from "@/app/api/getUserId";
-import createEmptyPlaylist from "@/app/api/createEmptyPlaylist";
-import getSong from "@/app/api/getSong";
-import addSongs from "@/app/api/addSongs";
+import getUserId from "@/app/api/spotify/getUserId";
+import createEmptyPlaylist from "@/app/api/spotify/createEmptyPlaylist";
+import getSong from "@/app/api/spotify/getSong";
+import addSongs from "@/app/api/spotify/addSongs";
+import getPlaylistLink from "@/app/api/auth/getPlaylistLink";
 
 export async function MusicList({session, songArray}: any) {
 
@@ -13,8 +14,8 @@ export async function MusicList({session, songArray}: any) {
     const accessToken = session?.accessToken;
 
     const playlist = {
-        name: "Neffex Music Playlist BeatBuilder",
-        description: "Created by BeatBuilder",
+        name: "Music Playlist by Melobrag",
+        description: "Created by Melobrag",
         public: false
     }
 
@@ -28,6 +29,7 @@ export async function MusicList({session, songArray}: any) {
         }));
         await addSongs(accessToken, userPlaylist.id, songUris)
         console.log("created playlist!")
+        return await getPlaylistLink(accessToken, userPlaylist.id)
     }
 }
 

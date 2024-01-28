@@ -9,7 +9,6 @@ export default async function getSongs(req: NextApiRequest, res: NextApiResponse
         let {prompt} = req.body;
         console.log("Received prompt:", prompt);
 
-        //   prompt = "Return me an array of fitness motivation songs. Take your cue from artists like Neffex and include artists which are similar. 3 Songs should be included."
 
         const openai = new OpenAI({apiKey: apiKey});
 
