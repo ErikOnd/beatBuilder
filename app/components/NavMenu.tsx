@@ -13,8 +13,7 @@ function AuthButton() {
     }
     return (
         <>
-            Not signed in <br/>
-            <button onClick={() => signIn()}>Sign out</button>
+            <button onClick={() => signIn()}>Sign in</button>
         </>
     )
 }
@@ -22,7 +21,6 @@ function AuthButton() {
 export default function NavMenu() {
     return (
         <div>
-            <p></p>
             <AuthButton/>
         </div>
     )

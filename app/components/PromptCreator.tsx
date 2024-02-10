@@ -1,8 +1,14 @@
 "use client"
-import {MusicList} from "@/app/components/MusicList";
+import MusicList from "@/app/api/auth/spotify/MusicList";
 import {useState} from "react";
+import {Session} from "../types/session";
 
-export default function PromptCreator({session}) {
+type PromptCreatorProps = {
+    session: Session;
+};
+
+export default function PromptCreator({session}:PromptCreatorProps) {
+
     const userPrompt = "Return me an array of fitness motivation songs. Take your cue from artists like Neffex and include artists which are similar. 3 Songs should be included."
     const [playlistLink, setplaylistLink] = useState<string | null>(null)
     const handleSubmit = async () => {
@@ -19,6 +25,8 @@ export default function PromptCreator({session}) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const songArray = await response.json();
+            console.log("songArray:", songArray)
+
             setplaylistLink(await MusicList({session: session, songArray: songArray}))
 
 
@@ -26,14 +34,20 @@ export default function PromptCreator({session}) {
             console.error("Error fetching data:", error);
         }
     };
-console.log("playlistLink:", playlistLink)
+    console.log("playlistLink:", playlistLink)
 
     return (
         <div>
-            <button onClick={handleSubmit}>Send to server</button>
-            <p>Your Playlist:
-                {playlistLink && (<a href={playlistLink} target="_blank">Click here</a>)}
-            </p>
+            {
+                session && (
+                    <>
+                        <button onClick={handleSubmit}>Create my Playlist</button>
+                        <p>Your Playlist:
+                            {playlistLink && (<a href={playlistLink} target="_blank">Click here</a>)}
+                        </p>
+                    </>
+                )
+            }
         </div>
     );
 }

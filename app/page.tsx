@@ -5,18 +5,23 @@ import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 
 export default async function Home() {
 
+
     const session = await getServerSession(authOptions);
 
     return (
         <main className={styles.main}>
             {
                 session?.user?.name ? (
-                    <div>{session?.user?.name}</div>
+                    <>
+                        <div> Hello {session?.user?.name}</div>
+                        <PromptCreator session={session}/>
+                    </>
+
                 ) : (
-                    <div>Not logged in</div>
+                    <>
+                    </>
                 )
             }
-            <PromptCreator session={session}/>
         </main>
     )
 }

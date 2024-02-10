@@ -3,8 +3,15 @@ import createEmptyPlaylist from "@/app/api/spotify/createEmptyPlaylist";
 import getSong from "@/app/api/spotify/getSong";
 import addSongs from "@/app/api/spotify/addSongs";
 import getPlaylistLink from "@/app/api/auth/getPlaylistLink";
+import {Session} from "@/app/types/session";
+import {SongArray} from "@/app/types/songArray";
 
-export async function MusicList({session, songArray}: any) {
+type MusicListProps = {
+    session: Session,
+    songArray: SongArray
+}
+
+export default async function MusicList({session, songArray}: MusicListProps) {
 
     if (!session) {
         console.log('No session found');
