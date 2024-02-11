@@ -6,8 +6,7 @@ const apiKey = process.env.OPENAI_API_KEY;
 export default async function getSongs(req: NextApiRequest, res: NextApiResponse) {
     try {
 
-        let {prompt} = req.body;
-        console.log("Received prompt:", prompt);
+        const {prompt} = req.body;
 
 
         const openai = new OpenAI({apiKey: apiKey});

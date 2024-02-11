@@ -16,7 +16,12 @@ export default async function getPlaylistLink(accessToken: string, playlistId: s
         }
 
         const data = await response.json();
-        return data.external_urls.spotify
+        return {
+         playlistLink: data.external_urls.spotify,
+         playlistId: playlistId
+        }
+
+
     } catch (error) {
         console.error('Error getting song: ', error);
     }

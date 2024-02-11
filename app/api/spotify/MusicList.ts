@@ -2,7 +2,7 @@ import getUserId from "@/app/api/spotify/getUserId";
 import createEmptyPlaylist from "@/app/api/spotify/createEmptyPlaylist";
 import getSong from "@/app/api/spotify/getSong";
 import addSongs from "@/app/api/spotify/addSongs";
-import getPlaylistLink from "@/app/api/auth/getPlaylistLink";
+import getPlaylistLink from "@/app/api/spotify/getPlaylistLink";
 import {Session} from "@/app/types/session";
 import {SongArray} from "@/app/types/songArray";
 
@@ -14,7 +14,6 @@ type MusicListProps = {
 export default async function MusicList({session, songArray}: MusicListProps) {
 
     if (!session) {
-        console.log('No session found');
         return;
     }
 
@@ -28,7 +27,7 @@ export default async function MusicList({session, songArray}: MusicListProps) {
 
     if (accessToken) {
         const user = await getUserId(accessToken)
-        console.log("user:", user)
+
 
         const userPlaylist = await createEmptyPlaylist(accessToken, user.id, playlist)
         const songUris: string[] = await Promise.all(songArray.map(async (song) => {
