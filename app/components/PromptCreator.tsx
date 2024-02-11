@@ -15,7 +15,7 @@ export type PlaylistData = {
 
 export default function PromptCreator({ session }: PromptCreatorProps) {
     const userPrompt = "Return me an array of fitness motivation songs. Take your cue from artists like Neffex and include artists which are similar. 3 Songs should be included.";
-    const [playlistData, setPlaylistData] = useState<PlaylistData | null>(null);
+    const [playlistData, setPlaylistData] = useState<PlaylistData | undefined>(undefined);
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
     const handleSubmit = async () => {
@@ -53,7 +53,7 @@ export default function PromptCreator({ session }: PromptCreatorProps) {
                     <p>Your Playlist:
                         {playlistData?.playlistLink && (<a href={playlistData.playlistLink} target="_blank" rel="noopener noreferrer">Click here</a>)}
                     </p>
-                    <iframe ref={iframeRef} className="border-radius-12px" style={{borderRadius: '12px'}} width="100%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe ref={iframeRef} className="border-radius-12px" style={{borderRadius: '12px'}} width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </>
             )}
         </div>
