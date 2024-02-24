@@ -1,5 +1,6 @@
 "use client"
 import {signOut, signIn, useSession} from "next-auth/react";
+import Button from "@mui/material/Button";
 
 function AuthButton() {
     const {data: session} = useSession()
@@ -7,7 +8,7 @@ function AuthButton() {
         return (
             <>
                 {session?.user?.name} <br/>
-                <button onClick={() => signOut()}>Sign out</button>
+                <Button variant="contained" onClick={() => signOut()}>Sign out</Button>
             </>
         );
     }

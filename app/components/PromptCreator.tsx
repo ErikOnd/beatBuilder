@@ -14,7 +14,7 @@ export type PlaylistData = {
 }
 
 export default function PromptCreator({ session }: PromptCreatorProps) {
-    const userPrompt = "Return me an array of fitness motivation songs. Take your cue from artists like Connor Price and include artists which are similar. 10 Songs should be included.";
+    const userPrompt = "Return me an array of fitness motivation songs. Take your cue from artists like Nickelback and include artists which are similar. 10 Songs should be included.";
     const [playlistData, setPlaylistData] = useState<PlaylistData | undefined>(undefined);
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
