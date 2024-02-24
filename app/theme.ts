@@ -8,46 +8,38 @@ const roboto = Roboto({
     display: 'swap',
 });
 
-const colors = {
-    vibrantBlue: '#0A17A7',
-    sparklerOrange: '#FFA500',
-    crowdSilhouetteBlack: '#000000',
-    highlightSilver: '#C0C0C0',
-    concertWhite: '#FFFFFF',
-};
-
 // Create a theme instance.
 const theme = createTheme({
     palette: {
         primary: {
-            main: colors.vibrantBlue,
-            contrastText: colors.concertWhite,
+            main: '#E6E6E6',
+            contrastText: '#373737',
         },
         secondary: {
-            main: colors.sparklerOrange,
-            contrastText: colors.concertWhite,
+            main: '#EF9A9A',
         },
         error: {
-            main: colors.crowdSilhouetteBlack,
+            main: '#D32F2F',
         },
         warning: {
-            main: colors.highlightSilver,
+            main: '#FFA000',
         },
         info: {
-            main: colors.vibrantBlue,
+            main: '#7986CB',
         },
         success: {
-            main: colors.sparklerOrange,
+            main: '#388E3C',
         },
         background: {
-            default: colors.crowdSilhouetteBlack,
-            paper: colors.crowdSilhouetteBlack,
+            default: '#373737',
+            paper: '#424242',
         },
         text: {
-            primary: colors.concertWhite,
-            secondary: colors.highlightSilver,
+            primary: '#E6E6E6',
+            secondary: '#FFF59D',
         },
     },
+    // Additional theme customizations can go here
 });
 
 export default theme;
