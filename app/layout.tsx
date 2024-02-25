@@ -3,7 +3,7 @@ import {Inter} from 'next/font/google'
 import './globals.css'
 import {getServerSession} from "next-auth";
 import SessionProvider from "./components/SessionProvider";
-import NavMenu from "@/app/components/NavMenu";
+import WelcomePage from "@/app/components/WelcomePage";
 import theme from "@/app/theme";
 import {ThemeProvider} from "@mui/material/styles";
 import CssBaseline from '@mui/material/CssBaseline';
@@ -30,7 +30,7 @@ export default async function RootLayout({
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
                 <div className="backgroundImage"/>
-                <NavMenu/>
+                <WelcomePage/>
                 {children}
             </ThemeProvider>
         </SessionProvider>

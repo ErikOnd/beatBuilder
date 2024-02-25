@@ -14,7 +14,7 @@ interface CustomButtonProps extends ButtonProps {
 export const CustomTypography = ({ children, ...rest }: CustomTypographyProps) => (
     <Typography
         variant="h2"
-        sx={{ fontSize: "2.5rem", fontWeight: "bold", textAlign: "center" }}
+        sx={{textAlign: "center" }}
         {...rest}
     >
         {children}
@@ -27,12 +27,6 @@ export const CustomTypography = ({ children, ...rest }: CustomTypographyProps) =
 export const CustomButton = ({ children, ...rest }: CustomButtonProps) => (
     <Button
         variant="contained"
-        sx={{
-            fontSize: '1rem',
-            padding: '12px 24px',
-            fontWeight: "bold",
-            // Add any other custom styles as needed
-        }}
         {...rest}
     >
         {children}

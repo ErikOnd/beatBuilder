@@ -13,7 +13,6 @@ const theme = createTheme({
     palette: {
         primary: {
             main: '#E6E6E6',
-            contrastText: '#373737',
         },
         secondary: {
             main: '#EF9A9A',
@@ -32,14 +31,59 @@ const theme = createTheme({
         },
         background: {
             default: '#373737',
-            paper: '#424242',
         },
         text: {
             primary: '#E6E6E6',
-            secondary: '#FFF59D',
         },
     },
-    // Additional theme customizations can go here
 });
+
+
+theme.typography.h2 = {
+    fontWeight: 'bold',
+    fontSize:"2rem",
+
+    '@media (max-width:600px)': {
+
+    },
+
+    '@media (min-width:600px)': {
+        fontSize: '2rem',
+    },
+    '@media (min-width:900px)': {
+        fontSize: '2rem',
+    },
+    '@media (min-width:1200px)': {
+        fontSize: '3rem',
+    },
+    '@media (min-width:1536px)': {
+        fontSize: '4rem',
+    },
+}
+
+theme.typography.button = {
+    fontWeight: 'bold',
+
+    '@media (max-width:600px)': {
+        fontSize:"2rem",
+        padding: '1rem 2.5rem',
+    },
+    '@media (min-width:600px)': {
+        fontSize: '2rem',
+        padding: '1rem 2.5rem',
+    },
+    '@media (min-width:900px)': {
+        fontSize: '2rem',
+    },
+    '@media (min-width:1200px)': {
+        fontSize: '3rem',
+    },
+    '@media (min-width:1536px)': {
+        fontSize: '4rem',
+    },
+}
+
+
+
 
 export default theme;
