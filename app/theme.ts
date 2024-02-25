@@ -12,7 +12,7 @@ const roboto = Roboto({
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#E6E6E6',
+            main: 'rgba(230,230,230,0.8)',
         },
         secondary: {
             main: '#EF9A9A',
@@ -61,27 +61,27 @@ theme.typography.h2 = {
     },
 }
 
-theme.typography.button = {
-    fontWeight: 'bold',
-
-    '@media (max-width:600px)': {
-        fontSize:"2rem",
-        padding: '1rem 2.5rem',
-    },
-    '@media (min-width:600px)': {
-        fontSize: '2rem',
-        padding: '1rem 2.5rem',
-    },
-    '@media (min-width:900px)': {
-        fontSize: '2rem',
-    },
-    '@media (min-width:1200px)': {
-        fontSize: '3rem',
-    },
-    '@media (min-width:1536px)': {
-        fontSize: '4rem',
-    },
-}
+// theme.typography.button = {
+//     fontWeight: 'bold',
+//
+//     '@media (max-width:600px)': {
+//         fontSize:"2rem",
+//         padding: '1rem 2.5rem',
+//     },
+//     '@media (min-width:600px)': {
+//         fontSize: '2rem',
+//         padding: '1rem 2.5rem',
+//     },
+//     '@media (min-width:900px)': {
+//         fontSize: '2rem',
+//     },
+//     '@media (min-width:1200px)': {
+//         fontSize: '3rem',
+//     },
+//     '@media (min-width:1536px)': {
+//         fontSize: '4rem',
+//     },
+// }
 
 
 

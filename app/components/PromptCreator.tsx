@@ -3,6 +3,7 @@
 import React, { useState, useRef } from 'react';
 import MusicList from "@/app/api/spotify/MusicList";
 import { Session } from "../types/session";
+import {LargeButton} from "@/app/components/CustomComponents";
 
 type PromptCreatorProps = {
     session: Session;
@@ -50,7 +51,7 @@ export default function PromptCreator({ session }: PromptCreatorProps) {
         <div>
             {session && (
                 <>
-                    <button onClick={handleSubmit}>Create my Playlist</button>
+                    <LargeButton onClick={handleSubmit}>Create my Playlist</LargeButton>
                     <p>Your Playlist:
                         {playlistData?.playlistLink && (<a href={playlistData.playlistLink} target="_blank" rel="noopener noreferrer">Click here</a>)}
                     </p>
