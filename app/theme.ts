@@ -12,28 +12,17 @@ const roboto = Roboto({
 const theme = createTheme({
     palette: {
         primary: {
-            main: 'rgba(230,230,230,0.8)',
+            main: '#2d2d2d',
+            contrastText: "#FFF8E1"
         },
         secondary: {
-            main: '#EF9A9A',
-        },
-        error: {
-            main: '#D32F2F',
-        },
-        warning: {
-            main: '#FFA000',
-        },
-        info: {
-            main: '#7986CB',
-        },
-        success: {
-            main: '#388E3C',
+            main: '#F3E0C3',
         },
         background: {
-            default: '#373737',
+            default: '#FFF8E1',
         },
         text: {
-            primary: '#E6E6E6',
+            primary: '#2d2d2d',
         },
     },
 });

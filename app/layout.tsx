@@ -28,7 +28,6 @@ export default async function RootLayout({
         <SessionProvider session={session}>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                <div className="backgroundImage"/>
                 {children}
             </ThemeProvider>
         </SessionProvider>
