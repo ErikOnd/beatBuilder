@@ -1,6 +1,6 @@
 import styles from './page.module.css'
 import {getServerSession} from "next-auth";
-import PromptCreator from "@/app/components/PromptCreator";
+import PlaylistCreator from "@/app/components/PlaylistCreator";
 import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import AuthButton from "@/app/components/AuthButton";
 import {Typography} from "@mui/material";
@@ -17,7 +17,7 @@ export default async function Home() {
             {
                 session?.user?.name ? (
                     <>
-                        <PromptCreator session={session}/>
+                        <PlaylistCreator session={session}/>
                         <AuthButton />
                     </>
 
@@ -32,6 +32,3 @@ export default async function Home() {
         </Box>
     )
 }
-
-//https://developer.spotify.com/documentation/web-api/reference/search
-// get artist and song info

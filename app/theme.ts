@@ -1,6 +1,6 @@
 'use client';
-import { Roboto } from 'next/font/google';
-import { createTheme } from '@mui/material/styles';
+import {Roboto} from 'next/font/google';
+import {createTheme} from '@mui/material/styles';
 
 const roboto = Roboto({
     weight: ['300', '400', '500', '700'],
@@ -30,11 +30,9 @@ const theme = createTheme({
 
 theme.typography.h2 = {
     fontWeight: 'bold',
-    fontSize:"2rem",
+    fontSize: "2rem",
 
-    '@media (max-width:600px)': {
-
-    },
+    '@media (max-width:600px)': {},
 
     '@media (min-width:600px)': {
         fontSize: '2rem',
@@ -71,8 +69,6 @@ theme.typography.h2 = {
 //         fontSize: '4rem',
 //     },
 // }
-
-
 
 
 export default theme;
