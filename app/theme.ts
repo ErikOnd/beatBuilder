@@ -12,18 +12,9 @@ const roboto = Roboto({
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#2d2d2d',
-            contrastText: "#FFF8E1"
+            main: '#ff6a00',
         },
-        secondary: {
-            main: '#F3E0C3',
-        },
-        background: {
-            default: '#FFF8E1',
-        },
-        text: {
-            primary: '#2d2d2d',
-        },
+        mode: "dark"
     },
 });
 

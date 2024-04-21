@@ -3,6 +3,9 @@ import {Autocomplete, TextField} from "@mui/material";
 import {MoodOptions} from "@/app/data/MoodOptions";
 import Box from "@mui/material/Box";
 import PromptNavigation from "@/app/components/PromptNavigation";
+import HorizontalLinearStepper from "@/app/components/Stepper";
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 type PromptCreatorProps = Readonly<{
     step: Dispatch<SetStateAction<number>>
@@ -11,6 +14,7 @@ type PromptCreatorProps = Readonly<{
 
 export default function PromptCreator({step, userPrompt}: PromptCreatorProps): ReactNode {
 
+    const matches = useMediaQuery('(min-width:600px)');
 
     return (
         <Box>
@@ -19,7 +23,7 @@ export default function PromptCreator({step, userPrompt}: PromptCreatorProps): R
                 getOptionLabel={(option) => option.title}
                 renderInput={(params) => <TextField {...params} label="Select a mood"/>}
             />
-            <PromptNavigation step={step} userPrompt={userPrompt}/>
+            {matches ? <HorizontalLinearStepper/> : <PromptNavigation step={step} userPrompt={userPrompt}/>}
         </Box>
 
     );
